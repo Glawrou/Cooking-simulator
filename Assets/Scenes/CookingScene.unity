@@ -246,8 +246,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254742942}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.1, z: -0.04469771}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -7.22, z: -0.04469771}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1980352981}
@@ -271,9 +271,9 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 25.63303, y: 1.9399999}
-    newSize: {x: 25.2, y: 1.9399999}
+    newSize: {x: 128, y: 1.9399999}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
@@ -324,8 +324,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 25.2, y: 1.9399999}
+  m_DrawMode: 2
+  m_Size: {x: 128, y: 1.9399999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -629,6 +629,17 @@ MonoBehaviour:
     Score: 20
   - Ingredient: 5
     Score: 10
+  _combo:
+  - CountIdentical: 5
+    Multiplier: 1
+  - CountIdentical: 2
+    Multiplier: 2
+  - CountIdentical: 3
+    Multiplier: 1.5
+  - CountIdentical: 4
+    Multiplier: 1.25
+  - CountIdentical: 1
+    Multiplier: 2
 --- !u!1 &1494588327
 GameObject:
   m_ObjectHideFlags: 0
