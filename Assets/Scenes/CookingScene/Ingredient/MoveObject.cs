@@ -1,10 +1,10 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Collider2D), typeof(Rigidbody2D), typeof(VelocityObserver))]
-public class MoveObject : MonoBehaviour
+public class MoveObject : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private float _moveSpeed = 40f;
-    [SerializeField, Range(0, 1)] private float _endSpeed = 1f;
     
     private Rigidbody2D _rigidbody;
     private VelocityObserver _velocityObserver;
@@ -14,6 +14,18 @@ public class MoveObject : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _velocityObserver = GetComponent<VelocityObserver>();
+        MouseObserver.Instance.OnMouseUp += UnpinCursor;
+    }
+
+    public void SnapCursor()
+    {
+        _isDrag = true;
+    }
+
+    public void UnpinCursor()
+    {
+        _isDrag = false;
+        _rigidbody.velocity = _velocityObserver.Velocity;
     }
 
     private void Update()
@@ -35,14 +47,8 @@ public class MoveObject : MonoBehaviour
         _rigidbody.MovePosition(targetPos);
     }
 
-    private void OnMouseDown()
+    public void OnPointerDown(PointerEventData eventData)
     {
-        _isDrag = true;
-    }
-
-    private void OnMouseUp()
-    {
-        _isDrag = false;
-        _rigidbody.velocity = _velocityObserver.Velocity;
+        SnapCursor();
     }
 }

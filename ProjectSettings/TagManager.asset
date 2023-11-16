@@ -44,6 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: WorkingSpace
+    uniqueID: 3073129903
+    locked: 0
   - name: Ingredients
     uniqueID: 1424677025
+    locked: 0
+  - name: Cauldron
+    uniqueID: 2854285087
     locked: 0

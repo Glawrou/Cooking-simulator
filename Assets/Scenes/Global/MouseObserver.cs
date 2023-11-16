@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class MouseObserver : MonoBehaviour
 {
+    public event Action OnMouseUp;
+
     public static MouseObserver Instance { get; private set; }
 
     [SerializeField] private Camera _camera;
@@ -17,5 +20,13 @@ public class MouseObserver : MonoBehaviour
         }
 
         Instance = this;
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            OnMouseUp?.Invoke();
+        }
     }
 }
