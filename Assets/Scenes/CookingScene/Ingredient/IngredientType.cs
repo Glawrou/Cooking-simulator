@@ -1,5 +1,6 @@
 public enum IngredientType
 {
+    None,
     Carrot,
     Meat,
     Onion,
