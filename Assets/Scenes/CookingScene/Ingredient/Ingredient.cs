@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
-    [field: SerializeField] public MoveObject MoveObject;
+    [field: SerializeField] public IngredientType IngredientType { get; private set; }
+    [field: SerializeField] public MoveObject MoveObject { get; private set; }
 }

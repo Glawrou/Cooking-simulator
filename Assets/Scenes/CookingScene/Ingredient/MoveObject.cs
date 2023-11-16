@@ -51,4 +51,9 @@ public class MoveObject : MonoBehaviour, IPointerDownHandler
     {
         SnapCursor();
     }
+
+    private void OnDestroy()
+    {
+        MouseObserver.Instance.OnMouseUp -= UnpinCursor;
+    }
 }

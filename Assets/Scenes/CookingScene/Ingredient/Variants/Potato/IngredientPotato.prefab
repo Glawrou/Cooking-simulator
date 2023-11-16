@@ -483,5 +483,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: IngredientPotato
       objectReference: {fileID: 0}
+    - target: {fileID: 6946167949609971300, guid: f9de5be5d71e6184f9335a3911f59203, type: 3}
+      propertyPath: <IngredientType>k__BackingField
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9de5be5d71e6184f9335a3911f59203, type: 3}
