@@ -8,6 +8,8 @@ public class UserInterfaceController : MonoBehaviour
 
     [SerializeField] private Text _textScore;
     [SerializeField] private Button _buttonRestart;
+    [SerializeField] private DishView _lastDish;
+    [SerializeField] private DishView _bestDish;
 
     private void Start()
     {
@@ -17,5 +19,15 @@ public class UserInterfaceController : MonoBehaviour
     public void SetScore(int value)
     {
         _textScore.text = value.ToString();
+    }
+
+    public void SetLastDish(Dish dish)
+    {
+        _lastDish.Fill(dish);
+    }
+
+    public void SetBestDish(Dish dish)
+    {
+        _bestDish.Fill(dish);
     }
 }

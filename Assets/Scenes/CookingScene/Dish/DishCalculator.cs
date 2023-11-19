@@ -8,7 +8,18 @@ public class DishCalculator : MonoBehaviour
     [SerializeField] private ComboData[] _combo;
     [SerializeField] private RecipesData _recipesData;
 
-    public string NameCalculate(Dictionary<IngredientType, int> countsGroups)
+    public Dish CreateDish(PotContents potContents)
+    {
+        var countsGroups = GroupIngredients(potContents.Ingredients);
+        return new Dish()
+        {
+            Name = NameCalculate(countsGroups),
+            Ingredients = countsGroups,
+            Score = Calculate(countsGroups)
+        };
+    }
+
+    private string NameCalculate(Dictionary<IngredientType, int> countsGroups)
     {
         var matchingRecipe = _recipesData.Recipes
             .FirstOrDefault(recipe =>
@@ -19,11 +30,10 @@ public class DishCalculator : MonoBehaviour
         return matchingRecipe?.Name ?? _recipesData.DefaultReciepeName;
     }
 
-    public int Calculate(IngredientType[] ingredients)
+    private int Calculate(Dictionary<IngredientType, int> countsGroups)
     {
-        var counts = GroupIngredients(ingredients);
-        Debug.Log(NameCalculate(counts));
-        var score = counts.Sum(item =>
+        Debug.Log(NameCalculate(countsGroups));
+        var score = countsGroups.Sum(item =>
         {
             var ingredientScore = _ingredientScore.FirstOrDefault(i => i.Ingredient == item.Key)?.Score ?? 0;
             var comboMultiplier = _combo.FirstOrDefault(c => c.CountIdentical == item.Value)?.Multiplier ?? 1;
