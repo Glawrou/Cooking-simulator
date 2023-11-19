@@ -8,6 +8,7 @@ public class CookingController : MonoBehaviour
     [SerializeField] private Cauldron _cauldron;
     [SerializeField] private UserInterfaceController _userInterfaceController;
     [SerializeField] private DishCalculator _dishCalculator;
+    [SerializeField] private KeyInputObserver _keyInputObserver;
 
     private const string IngredientsScoreNameFile = "IngredientsScoreData";
 
@@ -21,6 +22,8 @@ public class CookingController : MonoBehaviour
         _dishCalculator.Init(JsonReader.Read<IngredientsScoreData>(IngredientsScoreNameFile));
         _cauldron.OnAddIngredient += AddIngredientHandler;
         _userInterfaceController.OnPressRestart += RestartLevel;
+        _keyInputObserver.OnRestart += RestartLevel;
+        _keyInputObserver.OnClose += ApplicationQuit;
     }
 
     private void UpdateUI()
@@ -51,5 +54,10 @@ public class CookingController : MonoBehaviour
     private void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void ApplicationQuit()
+    {
+        Application.Quit();
     }
 }

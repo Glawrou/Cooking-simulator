@@ -863,6 +863,7 @@ MonoBehaviour:
   _cauldron: {fileID: 22360908}
   _userInterfaceController: {fileID: 1494588329}
   _dishCalculator: {fileID: 1151666564}
+  _keyInputObserver: {fileID: 0}
 --- !u!4 &1151666563
 Transform:
   m_ObjectHideFlags: 0
@@ -877,7 +878,7 @@ Transform:
   m_Children:
   - {fileID: 2087716117}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1151666564
 MonoBehaviour:
@@ -891,8 +892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54c56c13bc4a0946a53435d712c6805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ingredientsScore:
-    IngredientScore: []
   _combo:
   - CountIdentical: 5
     Multiplier: 1
@@ -1782,6 +1781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2087716117}
   - component: {fileID: 2087716116}
+  - component: {fileID: 2087716118}
   m_Layer: 0
   m_Name: Observers
   m_TagString: Untagged
@@ -1817,6 +1817,20 @@ Transform:
   m_Father: {fileID: 1151666563}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2087716118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087716115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18c46e7b1a436242a9f838bee4c2d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _restartGameKey: 114
+  _closeApplicationKey: 27
 --- !u!1 &2140690225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,7 +1927,7 @@ RectTransform:
   - {fileID: 1980352981}
   - {fileID: 1494588328}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
