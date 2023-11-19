@@ -891,17 +891,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54c56c13bc4a0946a53435d712c6805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ingredientScore:
-  - Ingredient: 2
-    Score: 50
-  - Ingredient: 3
-    Score: 40
-  - Ingredient: 4
-    Score: 30
-  - Ingredient: 1
-    Score: 20
-  - Ingredient: 5
-    Score: 10
+  _ingredientsScore:
+    IngredientScore: []
   _combo:
   - CountIdentical: 5
     Multiplier: 1

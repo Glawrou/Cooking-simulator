@@ -1,0 +1,10 @@
+{
+    "IngredientScore": [
+      {"Ingredient": 1, "Score": 50},
+      {"Ingredient": 2, "Score": 40},
+      {"Ingredient": 3, "Score": 30},
+      {"Ingredient": 4, "Score": 20},
+      {"Ingredient": 5, "Score": 10}
+    ]
+  }
+  

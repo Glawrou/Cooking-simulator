@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class DishCalculator : MonoBehaviour
 {
-    [SerializeField] private IngredientScoreData[] _ingredientScore;
     [SerializeField] private ComboData[] _combo;
     [SerializeField] private RecipesData _recipesData;
+
+    private IngredientsScoreData _ingredientsScore;
+
+    public void Init(IngredientsScoreData ingredientsScoreData)
+    {
+        _ingredientsScore = ingredientsScoreData;
+    }
 
     public Dish CreateDish(PotContents potContents)
     {
@@ -35,7 +41,7 @@ public class DishCalculator : MonoBehaviour
         Debug.Log(NameCalculate(countsGroups));
         var score = countsGroups.Sum(item =>
         {
-            var ingredientScore = _ingredientScore.FirstOrDefault(i => i.Ingredient == item.Key)?.Score ?? 0;
+            var ingredientScore = _ingredientsScore.IngredientScore.FirstOrDefault(i => i.Ingredient == item.Key)?.Score ?? 0;
             var comboMultiplier = _combo.FirstOrDefault(c => c.CountIdentical == item.Value)?.Multiplier ?? 1;
             return ingredientScore * comboMultiplier * item.Value;
         });

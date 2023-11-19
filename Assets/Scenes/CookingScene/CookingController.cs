@@ -9,6 +9,8 @@ public class CookingController : MonoBehaviour
     [SerializeField] private UserInterfaceController _userInterfaceController;
     [SerializeField] private DishCalculator _dishCalculator;
 
+    private const string IngredientsScoreNameFile = "IngredientsScoreData";
+
     private List<Dish> _listDish;
     private PotContents _potContents;
 
@@ -16,6 +18,7 @@ public class CookingController : MonoBehaviour
     {
         ClearPot();
         _listDish = new List<Dish>();
+        _dishCalculator.Init(JsonReader.Read<IngredientsScoreData>(IngredientsScoreNameFile));
         _cauldron.OnAddIngredient += AddIngredientHandler;
         _userInterfaceController.OnPressRestart += RestartLevel;
     }
