@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        var ingredient = Instantiate(_ingredientVariant, MouseObserver.Instance.MouseWorldPos, Quaternion.identity, null);
+        var ingredient = Instantiate(_ingredientVariant, MouseObserver.Instance.MouseWorldPos, Quaternion.identity, transform);
         ingredient.MoveObject.SnapCursor();
     }
 }
