@@ -863,7 +863,7 @@ MonoBehaviour:
   _cauldron: {fileID: 22360908}
   _userInterfaceController: {fileID: 1494588329}
   _dishCalculator: {fileID: 1151666564}
-  _keyInputObserver: {fileID: 0}
+  _keyInputObserver: {fileID: 2087716118}
 --- !u!4 &1151666563
 Transform:
   m_ObjectHideFlags: 0
